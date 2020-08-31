@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: krikey-greeting
+  labels:
+    app: krikey-greeting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: krikey-greeting
+  template:
+    metadata:
+      labels:
+        app: krikey-greeting
+    spec:
+      containers:
+      - name: krikey-greeting
+        image: blublud/krikey-greeting
+        ports:
+        - containerPort: 8080
