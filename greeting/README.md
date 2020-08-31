@@ -4,7 +4,7 @@
 * Krikey-Greeting is a REST API end-point developed in nodejs, using restify library.
 * This service is packaged as a Docker container. Its image is hosted in Docker Hub
  (https://hub.docker.com/repository/docker/blublud/krikey-greeting)
-* Source code and related materials can be founded in this github repo (???) 
+* Source code and related materials can be founded in this github repo (https://github.com/pdphuong/krikey-greeting/tree/master/greeting) 
 
 ## 2. Deploy Krikey-Greeting
 Once Krikey-Greeting docker image is published to a repository (in this case Docker Hub),
@@ -15,7 +15,7 @@ This prerequisite consists of creating GKE project, GKE cluster, setting Gooogle
 Instruction for this step can be found here (https://cloud.google.com/shell/docs/quickstart?hl=en_US)  
 
 * Obtaining kubernetes resource specs (.yaml files): within GCS,
-`git clone ???`
+`git clone https://github.com/pdphuong/krikey-greeting.git`
 
 * Creating a Deployment for Krikey-Greeting service
 `kubectl create -f krikey-greeting-deployment.yaml`
