@@ -24,20 +24,20 @@ Instruction for this step can be found here (https://cloud.google.com/shell/docs
 `kubectl create -f krikey-greeting-service.yaml`
 
 * Test if Deployment and Service are successfully created
-Determine cluster IP address assigned to krikey-greeting Service 
-(line krikey-greeting, column CLUSTER-IP):
+    * Determine cluster IP address assigned to krikey-greeting Service 
+    (line krikey-greeting, column CLUSTER-IP):
 `kubectl get svc`
 
-Find a pod within kubernetes cluster:
+    * Find a pod within kubernetes cluster:
 `kubectl get pod`
-Pick a pod having prefix *krikey-greeting*-xxx  (for example, krikey-greeting-5f98df9778-xzbf6).
+    * Pick a pod having prefix *krikey-greeting*-xxx  (for example, krikey-greeting-5f98df9778-xzbf6).
 
-Enter the container's shell 
+    * Enter the container's shell 
 `kubectl exec -it krikey-greeting-5f98df9778-xzbf6 -- ash`
-Install curl command if necessary (curl command is used to test krikey-greeting service)
+    * Install curl command if necessary (curl command is used to test krikey-greeting service)
 `apk add curl`
 
-Send a GET HTTP request to krikey-greeting service
+    * Send a GET HTTP request to krikey-greeting service
 `curl http://<SERVICE-CLUSTER-IP-ADDRESS>/greetings?name=Krikey`
-A correct response should be
+    * A correct response should be
 `{"greeting":"Hello Krikey"}`
